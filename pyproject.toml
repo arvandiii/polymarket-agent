@@ -4,16 +4,7 @@ version = "0.1.0"
 description = "An agent for interacting with Polymarket."
 dependencies = [
     "fastapi",
-    "uvicorn",
-    "web3",
-    "langchain",
-    "langchain-openai",
-    "langchain-chroma",
-    "chromadb",
-    "python-dotenv",
-    "newsapi-python",
-    "poly_eip712_structs",
-    "py_clob_client",
+    "uvicorn"
 ]
 requires-python = ">=3.9"
 
@@ -21,7 +12,6 @@ requires-python = ">=3.9"
 dev = [
     "ruff",
     "pytest",
-    "pre-commit",
     "uv",
 ]
 
