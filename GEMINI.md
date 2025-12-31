@@ -1,0 +1,1 @@
+Deliver concise answers and responses, sacrificing grammar when brevity demands it.
