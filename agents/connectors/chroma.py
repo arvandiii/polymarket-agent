@@ -66,7 +66,6 @@ class PolymarketRAG:
 
         # create vector db
         def metadata_func(record: dict, metadata: dict) -> dict:
-
             metadata["id"] = record.get("id")
             metadata["markets"] = record.get("markets")
 
@@ -100,7 +99,6 @@ class PolymarketRAG:
 
         # create vector db
         def metadata_func(record: dict, metadata: dict) -> dict:
-
             metadata["id"] = record.get("id")
             metadata["outcomes"] = record.get("outcomes")
             metadata["outcome_prices"] = record.get("outcome_prices")

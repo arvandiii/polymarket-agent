@@ -47,7 +47,6 @@ class News:
         date_start: datetime = None,
         date_end: datetime = None,
     ) -> "list[Article]":
-
         all_articles = {}
         # Default to top articles if no start and end dates are given for search
         if not date_start and not date_end:

@@ -1,6 +1,6 @@
 # Makefile for polymarket-agent
 
-.PHONY: all install start-dev build-docker run-docker run-docker-dev clean help
+.PHONY: all install start-dev fmt build-docker run-docker run-docker-dev clean help
 
 all: help
 
@@ -17,7 +17,7 @@ help: ## Show this help message.
 
 install: ## Install Python dependencies from requirements.txt
 	@echo "Installing dependencies..."
-	pip install -r requirements.txt
+	uv pip sync requirements.txt
 
 # ====================================================================================
 # DEVELOPMENT
@@ -27,6 +27,10 @@ start-dev: ## Start the FastAPI development server.
 	@echo "Starting development server..."
 	python scripts/python/setup.py
 	fastapi dev scripts/python/server.py
+
+fmt: ## Format code with ruff.
+	@echo "Formatting code with ruff..."
+	ruff format .
 
 # ====================================================================================
 # DOCKER
