@@ -1,6 +1,6 @@
 # Makefile for polymarket-agent
 
-.PHONY: all install start-dev fmt build-docker run-docker run-docker-dev clean help
+.PHONY: all install compile-deps start-dev fmt build-docker run-docker run-docker-dev clean help
 
 all: help
 
@@ -17,7 +17,11 @@ help: ## Show this help message.
 
 install: ## Install Python dependencies from requirements.txt
 	@echo "Installing dependencies..."
-	uv pip sync requirements.txt
+	uv pip sync requirements.lock
+
+compile-deps: ## Compile dependencies from pyproject.toml into requirements.lock
+	@echo "Compiling dependencies into requirements.lock..."
+	uv pip compile pyproject.toml --all-extras -o requirements.lock
 
 # ====================================================================================
 # DEVELOPMENT
