@@ -1,9 +1,10 @@
+from typing import List
+
+from agents.adapters.trade_rules_mock import TradeRulesMockAdapter
+from agents.ports.gamma import GammaPort
 from agents.ports.news import NewsPort
 from agents.ports.search import SearchPort
-from agents.ports.gamma import GammaPort
-from agents.adapters.trade_rules_mock import TradeRulesMockAdapter
-from agents.utils.types import TradeRule, Market, PolymarketEvent, Article, SearchResult
-from typing import List
+from agents.utils.types import Article, Market, PolymarketEvent, SearchResult, TradeRule
 
 
 class Orchestrator:

@@ -1,7 +1,7 @@
+from agents.adapters.clob_mock import ClobMockAdapter
+from agents.adapters.gamma_mock import GammaMockAdapter
 from agents.adapters.news_mock import NewsMockAdapter
 from agents.adapters.search_mock import SearchMockAdapter
-from agents.adapters.gamma_mock import GammaMockAdapter
-from agents.adapters.clob_mock import ClobMockAdapter
 from agents.application.orchestrator import Orchestrator
 from agents.application.trader import Trader
 

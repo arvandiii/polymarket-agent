@@ -1,6 +1,7 @@
+from typing import List
+
 from agents.ports.clob import ClobPort
 from agents.utils.types import TradeRule
-from typing import List
 
 
 class Trader:
