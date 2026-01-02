@@ -9,6 +9,9 @@ from polymarket_agent.utils.types import (
 )
 
 
+from polymarket_agent.utils.mock_data import mock_trade_rules
+
+
 class TradeRulesMockAdapter:
     def generate_trade_rules(
         self,
@@ -18,15 +21,4 @@ class TradeRulesMockAdapter:
         search_results: List[SearchResult],
     ) -> List[TradeRule]:
         print("TradeRulesMock: Generating mock trade rules.")
-        # Based on the static mock data, generate some predefined rules
-        if markets and events:
-            # Example: Always buy market "m1" if it exists
-            return [
-                TradeRule(
-                    market_id="m1",
-                    predicted_price=0.58,
-                    action="BUY",
-                    size_percentage=0.1,
-                )
-            ]
-        return []
+        return mock_trade_rules

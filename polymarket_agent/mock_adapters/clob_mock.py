@@ -1,16 +1,11 @@
 from typing import Any, Dict
 
 from polymarket_agent.ports.clob import ClobPort
-from polymarket_agent.utils.types import OrderBookSummary
-
-mock_order_book = OrderBookSummary(
-    market="mock_market_id",
-    asset_id="token_A",
-    bids=[{"price": "0.55", "size": "100"}],
-    asks=[{"price": "0.60", "size": "100"}],
+from polymarket_agent.utils.mock_data import (
+    mock_order_book,
+    mock_usdc_balance,
 )
-
-mock_usdc_balance = 1000.0
+from polymarket_agent.utils.types import OrderBookSummary
 
 
 class ClobMockAdapter(ClobPort):

@@ -1,12 +1,8 @@
 from typing import List
 
 from polymarket_agent.ports.news import NewsPort
+from polymarket_agent.utils.mock_data import mock_news_articles
 from polymarket_agent.utils.types import Article
-
-mock_news_articles = [
-    Article(title="Mock News 1: Event A likely", description="... details ..."),
-    Article(title="Mock News 2: Impact on Market Z", description="... details ..."),
-]
 
 
 class NewsMockAdapter(NewsPort):
