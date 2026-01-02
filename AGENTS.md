@@ -1,0 +1,3 @@
+- Deliver concise answers and responses, sacrificing grammar when brevity demands it.
+- Always use best practices and best design decisions
+- Never add comment in the code
