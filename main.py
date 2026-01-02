@@ -1,7 +1,7 @@
-from polymarket_agent.adapters.clob_mock import ClobMockAdapter
-from polymarket_agent.adapters.gamma_mock import GammaMockAdapter
-from polymarket_agent.adapters.news_mock import NewsMockAdapter
-from polymarket_agent.adapters.search_mock import SearchMockAdapter
+from polymarket_agent.mock_adapters.clob_mock import ClobMockAdapter
+from polymarket_agent.mock_adapters.gamma_mock import GammaMockAdapter
+from polymarket_agent.mock_adapters.news_mock import NewsMockAdapter
+from polymarket_agent.mock_adapters.search_mock import SearchMockAdapter
 from polymarket_agent.application.orchestrator import Orchestrator
 from polymarket_agent.application.trader import Trader
 
