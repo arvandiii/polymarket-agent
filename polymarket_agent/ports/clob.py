@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import Any, Dict
 
-from agents.utils.types import OrderBookSummary
+from polymarket_agent.utils.types import OrderBookSummary
 
 
 class ClobPort(ABC):

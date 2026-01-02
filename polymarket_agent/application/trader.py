@@ -1,7 +1,7 @@
 from typing import List
 
-from agents.ports.clob import ClobPort
-from agents.utils.types import TradeRule
+from polymarket_agent.ports.clob import ClobPort
+from polymarket_agent.utils.types import TradeRule
 
 
 class Trader:

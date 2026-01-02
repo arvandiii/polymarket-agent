@@ -1,7 +1,7 @@
 from typing import Any, Dict
 
-from agents.ports.clob import ClobPort
-from agents.utils.types import OrderBookSummary
+from polymarket_agent.ports.clob import ClobPort
+from polymarket_agent.utils.types import OrderBookSummary
 
 mock_order_book = OrderBookSummary(
     market="mock_market_id",

@@ -1,6 +1,12 @@
 from typing import List
 
-from agents.utils.types import Article, Market, PolymarketEvent, SearchResult, TradeRule
+from polymarket_agent.utils.types import (
+    Article,
+    Market,
+    PolymarketEvent,
+    SearchResult,
+    TradeRule,
+)
 
 
 class TradeRulesMockAdapter:

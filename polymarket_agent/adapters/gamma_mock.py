@@ -1,7 +1,7 @@
 from typing import List
 
-from agents.ports.gamma import GammaPort
-from agents.utils.types import Market, PolymarketEvent
+from polymarket_agent.ports.gamma import GammaPort
+from polymarket_agent.utils.types import Market, PolymarketEvent
 
 # Define your mock_markets_data and mock_events_data here,
 # ensuring they match the structure of Market and PolymarketEvent Pydantic models.

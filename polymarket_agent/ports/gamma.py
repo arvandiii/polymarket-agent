@@ -1,7 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
 
-from agents.utils.types import Market, PolymarketEvent
+from polymarket_agent.utils.types import Market, PolymarketEvent
 
 
 class GammaPort(ABC):

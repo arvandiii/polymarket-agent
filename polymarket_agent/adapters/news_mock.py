@@ -1,7 +1,7 @@
 from typing import List
 
-from agents.ports.news import NewsPort
-from agents.utils.types import Article
+from polymarket_agent.ports.news import NewsPort
+from polymarket_agent.utils.types import Article
 
 mock_news_articles = [
     Article(title="Mock News 1: Event A likely", description="... details ..."),
