@@ -1,6 +1,6 @@
 # Makefile for polymarket-agent
 
-VENV_PYTHON = venv/bin/python
+PY = venv/bin/python
 
 .PHONY: all install compile-deps start-dev fmt build-docker run-docker run-docker-dev clean help
 
@@ -19,28 +19,27 @@ help: ## Show this help message.
 
 install: ## Install Python dependencies from requirements.txt
 	@echo "Installing dependencies..."
-	$(VENV_PYTHON) -m uv pip sync requirements.lock
+	$(PY) -m uv pip sync requirements.lock
 
 compile-deps: ## Compile dependencies from pyproject.toml into requirements.lock
 	@echo "Compiling dependencies into requirements.lock..."
-	$(VENV_PYTHON) -m uv pip compile pyproject.toml --all-extras -o requirements.lock
+	$(PY) -m uv pip compile pyproject.toml --all-extras -o requirements.lock
 
 # ====================================================================================
 # DEVELOPMENT
 # ====================================================================================
 
-start-dev: ## Start the FastAPI development server.
-	@echo "Starting development server..."
-	venv/bin/fastapi dev scripts/server.py
+run: ## Run the main application script.
+	@echo "Running the application..."
+	$(PY) main.py
 
 test: ## Run tests with pytest.
 	@echo "Running tests..."
-	venv/bin/pytest
+	$(PY) -m pytest
 
 fmt: ## Format code with ruff.
 	@echo "Formatting code with ruff..."
-	venv/bin/ruff format .
-
+	$(PY) -m ruff format .
 # ====================================================================================
 # DOCKER
 # ====================================================================================

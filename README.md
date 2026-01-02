@@ -1,6 +1,6 @@
 # Polymarket Agent
 
-This project is a Python-based agent for interacting with the Polymarket prediction market. It uses a FastAPI backend and seems to leverage Langchain for AI-powered features.
+This project is a Python-based agent for interacting with the Polymarket prediction market. It is a script-based application that demonstrates a workflow for gathering data and executing trades using mock data.
 
 ## Getting Started
 
@@ -29,15 +29,15 @@ These instructions will get you a copy of the project up and running on your loc
 
 ## Usage
 
-### Running the development server
+### Running the application
 
-To start the FastAPI development server, run the following command:
+To run the main application script, use the following command:
 
 ```bash
-make start-dev
+make run
 ```
 
-This will start the server on `http://127.0.0.1:8000`. You can view the API documentation at `http://127.0.0.1:8000/docs`.
+This will execute the `main.py` script, which demonstrates the application's workflow with mock data. The output will be printed to the console.
 
 ### Running tests
 
@@ -51,6 +51,7 @@ make test
 
 ```
 .
+├── main.py             # Main application entry point
 ├── polymarket_agent/   # Main application code
 ├── tests/              # Test suite
 ├── Makefile            # Automation commands

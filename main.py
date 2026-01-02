@@ -1,9 +1,9 @@
-from polymarket_agentadapters.clob_mock import ClobMockAdapter
-from polymarket_agentadapters.gamma_mock import GammaMockAdapter
-from polymarket_agentadapters.news_mock import NewsMockAdapter
-from polymarket_agentadapters.search_mock import SearchMockAdapter
-from polymarket_agentapplication.orchestrator import Orchestrator
-from polymarket_agentapplication.trader import Trader
+from polymarket_agent.adapters.clob_mock import ClobMockAdapter
+from polymarket_agent.adapters.gamma_mock import GammaMockAdapter
+from polymarket_agent.adapters.news_mock import NewsMockAdapter
+from polymarket_agent.adapters.search_mock import SearchMockAdapter
+from polymarket_agent.application.orchestrator import Orchestrator
+from polymarket_agent.application.trader import Trader
 
 if __name__ == "__main__":
     print("Starting mocked application...")
