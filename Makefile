@@ -36,19 +36,19 @@ compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
 
 run: ## Run the server application script.
 	@echo "Running the application..."
-	python -m polymarket_agent.server
+	uv run python -m polymarket_agent.server
 
 test: ## Run tests with pytest.
 	@echo "Running tests..."
-	pytest
+	uv run pytest
 
 format: ## Format code with ruff.
 	@echo "Formatting code with ruff..."
-	ruff format .
+	uv run ruff format .
 
 lint: ## Lint code with ruff.
 	@echo "Linting code with ruff..."
-	ruff check . --fix --exit-zero
+	uv run ruff check . --fix --exit-zero
 # ====================================================================================
 # DOCKER
 # ====================================================================================
