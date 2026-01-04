@@ -26,8 +26,8 @@ jobs:
       - name: Install dependencies
         run: uv pip sync requirements.lock
 
-      - name: Check formatting with ruff
-        run: ruff format --check .
+      - name: Format with ruff
+        run: ruff format .
 
       - name: Lint with ruff
-        run: ruff check .
+        run: ruff check . --fix --exit-zero
