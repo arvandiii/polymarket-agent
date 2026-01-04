@@ -1,6 +1,7 @@
 # Makefile for polymarket-agent
 
 PY = venv/bin/python
+PYM = $(PY) -m
 
 .PHONY: all install compile-deps start-dev fmt build-docker run-docker run-docker-dev clean help
 
@@ -19,31 +20,31 @@ help: ## Show this help message.
 
 install: ## Install Python dependencies from uv.lock
 	@echo "Installing dependencies..."
-	$(PY) -m uv sync --locked
+	$(PYM) uv sync --locked
 
 compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
 	@echo "Compiling dependencies into uv.lock..."
-	$(PY) -m uv lock
-
+	$(PYM) uv lock
+	
 # ====================================================================================
 # DEVELOPMENT
 # ====================================================================================
 
 run: ## Run the server application script.
 	@echo "Running the application..."
-	$(PY) -m polymarket_agent.server
+	$(PYM) polymarket_agent.server
 
 test: ## Run tests with pytest.
 	@echo "Running tests..."
-	$(PY) -m pytest
+	$(PYM) pytest
 
 format: ## Format code with ruff.
 	@echo "Formatting code with ruff..."
-	$(PY) -m ruff format .
+	$(PYM) ruff format .
 
 lint: ## Lint code with ruff.
 	@echo "Linting code with ruff..."
-	$(PY) -m ruff check . --fix --exit-zero
+	$(PYM) ruff check . --fix --exit-zero
 # ====================================================================================
 # DOCKER
 # ====================================================================================
