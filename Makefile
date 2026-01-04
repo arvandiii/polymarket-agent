@@ -18,14 +18,17 @@ help: ## Show this help message.
 # INSTALLATION
 # ====================================================================================
 
-install: ## Install Python dependencies from uv.lock
+install-dev: ## Install all dependencies from uv.lock
 	@echo "Installing dependencies..."
-	$(PYM) uv sync --locked
+	$(PYM) uv sync --locked --all-extras
+
+install-server: ## Install only server dependencies from uv.lock
+	@echo "Installing server dependencies..."
+	$(PYM) uv sync --locked --no-dev
 
 compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
 	@echo "Compiling dependencies into uv.lock..."
 	$(PYM) uv lock
-	
 # ====================================================================================
 # DEVELOPMENT
 # ====================================================================================
