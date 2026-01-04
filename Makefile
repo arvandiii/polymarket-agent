@@ -17,13 +17,13 @@ help: ## Show this help message.
 # INSTALLATION
 # ====================================================================================
 
-install: ## Install Python dependencies from requirements.txt
+install: ## Install Python dependencies from uv.lock
 	@echo "Installing dependencies..."
-	$(PY) -m uv pip sync uv.lock
+	$(PY) -m uv sync --locked
 
 compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
 	@echo "Compiling dependencies into uv.lock..."
-	$(PY) -m uv pip compile pyproject.toml --all-extras -o uv.lock
+	$(PY) -m uv lock
 
 # ====================================================================================
 # DEVELOPMENT
@@ -37,9 +37,13 @@ test: ## Run tests with pytest.
 	@echo "Running tests..."
 	$(PY) -m pytest
 
-fmt: ## Format code with ruff.
+format: ## Format code with ruff.
 	@echo "Formatting code with ruff..."
 	$(PY) -m ruff format .
+
+lint: ## Lint code with ruff.
+	@echo "Linting code with ruff..."
+	$(PY) -m ruff check . --fix --exit-zero
 # ====================================================================================
 # DOCKER
 # ====================================================================================
