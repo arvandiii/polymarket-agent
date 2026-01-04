@@ -19,11 +19,11 @@ help: ## Show this help message.
 
 install: ## Install Python dependencies from requirements.txt
 	@echo "Installing dependencies..."
-	$(PY) -m uv pip sync requirements.lock
+	$(PY) -m uv pip sync uv.lock
 
-compile-deps: ## Compile dependencies from pyproject.toml into requirements.lock
-	@echo "Compiling dependencies into requirements.lock..."
-	$(PY) -m uv pip compile pyproject.toml --all-extras -o requirements.lock
+compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
+	@echo "Compiling dependencies into uv.lock..."
+	$(PY) -m uv pip compile pyproject.toml --all-extras -o uv.lock
 
 # ====================================================================================
 # DEVELOPMENT
