@@ -29,9 +29,9 @@ compile-deps: ## Compile dependencies from pyproject.toml into requirements.lock
 # DEVELOPMENT
 # ====================================================================================
 
-run: ## Run the main application script.
+run: ## Run the server application script.
 	@echo "Running the application..."
-	$(PY) -m polymarket_agent.main
+	$(PY) -m polymarket_agent.server
 
 test: ## Run tests with pytest.
 	@echo "Running tests..."

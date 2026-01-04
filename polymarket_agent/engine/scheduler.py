@@ -2,36 +2,7 @@ import asyncio
 import time
 from typing import Any, Dict
 
-
-class Task:
-    def __init__(self, name: str, interval: float = 1.0):
-        self.name = name
-        self.interval = interval
-        self.last_run = 0.0
-        self.enabled = True
-
-    def should_invoke(self, current_time: float) -> bool:
-        return self.enabled and current_time - self.last_run >= self.interval
-
-    async def execute(self, *args: Any, **kwargs: Any):
-        self.last_run = time.time()
-
-        try:
-            await self.ainvoke(*args, **kwargs)
-        except NotImplementedError:
-            self.invoke(*args, **kwargs)
-
-    def invoke(self, *args: Any, **kwargs: Any) -> Any:
-        raise NotImplementedError()
-
-    async def ainvoke(self, *args: Any, **kwargs: Any) -> Any:
-        raise NotImplementedError()
-
-    def stop(self):
-        self.enabled = False
-
-    def start(self):
-        self.enabled = True
+from polymarket_agent.engine.task import Task
 
 
 class AsyncScheduler:
@@ -63,7 +34,7 @@ class AsyncScheduler:
         self.is_running = True
         while self.is_running:
             current_time = time.time()
-            for task_name, task_info in self.tasks.items():
+            for _task_name, task_info in self.tasks.items():
                 target: Task = task_info["target"]
                 if target.should_invoke(current_time):
                     await target.execute(*task_info["args"], **task_info["kwargs"])
