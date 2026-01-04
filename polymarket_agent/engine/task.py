@@ -9,12 +9,12 @@ class Task:
         self.last_run = 0.0
         self.enabled = True
 
-    def should_invoke(self, current_time: float) -> bool:
+    def should_invoke(self) -> bool:
+        current_time = time.time()
         return self.enabled and current_time - self.last_run >= self.interval
 
-    async def execute(self, *args: Any, **kwargs: Any):
+    async def execute(self, *args: Any, **kwargs: Any) -> None:
         self.last_run = time.time()
-
         try:
             await self.ainvoke(*args, **kwargs)
         except NotImplementedError:

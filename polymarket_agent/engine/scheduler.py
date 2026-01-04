@@ -1,5 +1,4 @@
 import asyncio
-import time
 from typing import Any, Dict
 
 from polymarket_agent.engine.task import Task
@@ -33,9 +32,8 @@ class AsyncScheduler:
     async def run(self):
         self.is_running = True
         while self.is_running:
-            current_time = time.time()
             for _task_name, task_info in self.tasks.items():
                 target: Task = task_info["target"]
-                if target.should_invoke(current_time):
+                if target.should_invoke():
                     await target.execute(*task_info["args"], **task_info["kwargs"])
             await asyncio.sleep(self.run_interval)

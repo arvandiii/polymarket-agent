@@ -6,6 +6,8 @@ from fastapi import FastAPI
 
 from polymarket_agent.application.application import Application
 
+application = Application()
+
 
 @asynccontextmanager
 async def lifespan(app: FastAPI):
@@ -14,7 +16,6 @@ async def lifespan(app: FastAPI):
 
 
 fast_api = FastAPI(lifespan=lifespan)
-application = Application()
 
 
 @fast_api.get("/health")
