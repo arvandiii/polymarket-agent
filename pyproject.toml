@@ -3,7 +3,6 @@ name = "polymarket-agent"
 version = "0.1.0"
 description = "An agent for interacting with Polymarket."
 dependencies = [
-    "celery[redis]",
 ]
 requires-python = ">=3.9"
 
