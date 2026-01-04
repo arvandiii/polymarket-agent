@@ -23,6 +23,9 @@ jobs:
       - name: Configure uv path
         run: echo "$HOME/.cargo/bin" >> $GITHUB_PATH
 
+      - name: Display requirements.lock
+        run: cat requirements.lock
+
       - name: Install dependencies
         run: uv pip sync requirements.lock
 
