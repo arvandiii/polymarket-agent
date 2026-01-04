@@ -19,10 +19,10 @@ jobs:
         run: uv python install
 
       - name: Install dependencies
-        run: make install PYM=''
+        run: make install-dev
 
       - name: Format with ruff
-        run: make format PYM=''
+        run: make format
 
       - name: Lint with ruff
-        run: make lint PYM=''
+        run: make lint
