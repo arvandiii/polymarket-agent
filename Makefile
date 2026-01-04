@@ -15,6 +15,10 @@ help: ## Show this help message.
 # INSTALLATION
 # ====================================================================================
 
+venv:
+	@echo "Creating virtual environment..."
+	uv venv
+
 install-dev: ## Install all dependencies from uv.lock
 	@echo "Installing dependencies..."
 	uv sync --locked --all-extras
@@ -32,7 +36,7 @@ compile-deps: ## Compile dependencies from pyproject.toml into uv.lock
 
 run: ## Run the server application script.
 	@echo "Running the application..."
-	polymarket_agent.server
+	python -m polymarket_agent.server
 
 test: ## Run tests with pytest.
 	@echo "Running tests..."
